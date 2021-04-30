@@ -1,11 +1,9 @@
 # Whats Trends
 
 ## Tools in this project:
-> 1. ReactJS
-> 2. HTML
-> 3. SASS
-> 4. CSS
+> 1. ReactJS and Redux
+> 2. NodeJS
+> 3. HTML
+> 4. SASS
+> 5. CSS
 
-### To run:
-  1. Write on terminal: npm install
-  2. To run the server: npm start
