@@ -1,10 +1,18 @@
 import React from 'react'
 
-const Graphic = () => {
-
+const Graphic = ({ height_graph }) => {
+    let width = `{width: ${height_graph}}`
     return (
         <div className='grafic'>
-            Opa
+            <span className="grafic__podium">
+                1
+            </span>
+            <span className="grafic__title">
+                Flamengo
+            </span>
+            <span className="grafic__popularity">
+                100k
+            </span>
         </div>
     )
 }

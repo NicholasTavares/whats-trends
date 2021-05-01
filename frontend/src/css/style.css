@@ -9,6 +9,7 @@ html {
   font-size: 62.5%; }
 
 body {
+  font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
   overflow: hidden; }
 
@@ -20,11 +21,16 @@ body {
   background-color: brown;
   color: blueviolet; }
   .container-daily__container-graphic {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: absolute;
+    overflow-y: hidden;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 25%;
-    width: 60rem;
+    width: 45rem;
     height: 40rem;
     background-color: azure; }
   .container-daily__container-search {
@@ -37,6 +43,45 @@ body {
     background-color: black; }
 
 .grafic {
-  width: 20px;
-  height: 20px;
-  background-color: black; }
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding: 0.5rem;
+  width: 96%;
+  height: 3rem;
+  background-color: gray;
+  font-weight: 600;
+  color: white;
+  transition: width 2s;
+  border-radius: 1rem; }
+  .grafic__podium {
+    font-size: 1.5rem;
+    margin: 0 1rem 0 1rem;
+    animation: showPodiumTitle 2s ease-in-out; }
+  .grafic__title {
+    font-size: 1.5rem;
+    animation: showPodiumTitle 2s ease-in-out; }
+  .grafic__popularity {
+    display: block;
+    position: absolute;
+    left: 88%;
+    font-size: 1.5rem;
+    transform: translate(-50, -50);
+    animation: moveRightPopularity 2s ease-in-out; }
+
+.grafic:not(:last-child) {
+  margin-bottom: 1rem; }
+
+@keyframes moveRightPopularity {
+  from {
+    transform: translateX(-40rem);
+    opacity: 0; }
+  to {
+    transform: translateX(0);
+    opacity: 1; } }
+
+@keyframes showPodiumTitle {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }

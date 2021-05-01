@@ -7,11 +7,16 @@
     color: blueviolet;
 
     &__container-graphic{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         position: absolute;
+        overflow-y: hidden;
         transform: translate(-50%, -50%);
         top: 50%;
         left: 25%;
-        width: 60rem;
+        width: 45rem;
         height: 40rem;
         background-color: azure;
     }

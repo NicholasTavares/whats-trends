@@ -16,6 +16,15 @@ const Today = props => {
     return (
         <div className='container-daily'>
             <div className='container-daily__container-graphic'>
+                <Graphic height_graph={`${'40%'}`} />
+                <Graphic />
+                <Graphic />
+                <Graphic />
+                <Graphic />
+                <Graphic />
+                <Graphic />
+                <Graphic />
+                <Graphic />
                 <Graphic />
             </div>
             <div className='container-daily__container-search'>
