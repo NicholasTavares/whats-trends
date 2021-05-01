@@ -1,10 +1,10 @@
 import '../src/css/style.css';
-import Today from './components/today/today';
+import Trends from './components/trends/Trends';
 
 function App() {
   return (
     <div className="App">
-      <Today />
+      <Trends />
     </div>
   );
 }
