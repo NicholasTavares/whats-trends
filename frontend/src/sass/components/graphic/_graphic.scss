@@ -2,13 +2,11 @@
     display: flex;
     position: relative;
     align-items: center;
-    padding: 0.5rem;
-    width: 96%;
-    height: 3rem;
-    background-color: gray;
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    background-color: red;
     font-weight:600;
     color: white;
-
+    margin-top: 1rem;
     transition: width 2s;
     border-radius: 1rem;
 
@@ -19,20 +17,18 @@
     }
 
     &__title{
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        display: inline-block;
         font-size: 1.5rem;
         animation: showPodiumTitle 2s ease-in-out;
     }
 
     &__popularity{
-        display: block;
-        position: absolute;
-        left: 88%;
+        display: inline-block;
+        margin-left: auto;
         font-size: 1.5rem;
-        transform: translate(-50, -50);
-        animation: moveRightPopularity 2s ease-in-out;
+        padding-left: 0.4rem;
     }
-}
-
-.grafic:not(:last-child){
-    margin-bottom: 1rem;
 }

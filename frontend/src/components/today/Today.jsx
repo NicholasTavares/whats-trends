@@ -8,24 +8,24 @@ import Graphic from '../graphic/Graphic'
 
 const Today = props => {
 
-    useEffect(() => props.getDailyTrends(),
-        [])
+    useEffect(() => props.getDailyTrends(), [])
 
     console.log(props.countryDaily)
+
+    let podium = 0
 
     return (
         <div className='container-daily'>
             <div className='container-daily__container-graphic'>
-                <Graphic height_graph={`${'40%'}`} />
-                <Graphic />
-                <Graphic />
-                <Graphic />
-                <Graphic />
-                <Graphic />
-                <Graphic />
-                <Graphic />
-                <Graphic />
-                <Graphic />
+                <div>
+                    Mais pequisadas do dia
+                </div>
+                {props.countryDaily ? props.countryDaily.todayTrends.map(t => {
+                    podium++
+                    return (
+                        <Graphic podium={podium} title={t.title.query} popularity={t.formattedTraffic} />
+                    )
+                }) : 'Loading'}
             </div>
             <div className='container-daily__container-search'>
 
