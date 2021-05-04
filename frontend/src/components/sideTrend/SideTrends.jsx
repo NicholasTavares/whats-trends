@@ -10,7 +10,8 @@ const SideTrends = ({ podium, title, popularity, article, linkArticle, TimeArtic
                 {title}
             </div>
             <div className="trend__articles">
-                <a className="trend__articles__item" href={linkArticle}>{article}</a>
+                <a className="trend__articles__item" target="_blank"
+                    rel="noopener noreferrer" href={linkArticle}>{article}</a>
             </div>
             <div className="trend__related">
                 <span>{TimeArticle} por <strong>{SourceArticle}</strong></span>

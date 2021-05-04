@@ -19,15 +19,11 @@ const Today = props => {
         <div className="container">
             <div className='container-daily'>
                 <div className='container-daily__side-trends-container'>
-                    <span>Pesquisas do dia</span>
                     <div className="container-daily__side-trends">
-                        {props.countryDaily ? props.countryDaily.todayTrends.map((trend, i) => {
-
-                            return (
-                                <SideTrends podium={i + 1} title={trend.title.query} popularity={trend.formattedTraffic} article={trend.articles[0].title} linkArticle={trend.articles[0].url}
-                                    TimeArticle={trend.articles[0].timeAgo} SourceArticle={trend.articles[0].source} />
-                            )
-                        }) : 'Loading..'}
+                        {props.countryDaily ? props.countryDaily.todayTrends.map((trend, i) => (
+                            <SideTrends key={i} podium={i + 1} title={trend.title.query} popularity={trend.formattedTraffic} article={trend.articles[0].title} linkArticle={trend.articles[0].url}
+                                TimeArticle={trend.articles[0].timeAgo} SourceArticle={trend.articles[0].source} />
+                        )) : 'Loading..'}
                     </div>
                 </div>
                 <div className='container-daily__state-trends'>

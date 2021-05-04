@@ -16,7 +16,7 @@
         flex-direction: column;
         width: 22rem;
         margin-right: 4rem;
-        height: 44rem; 
+        height: 44rem;
 
         & > span{
             color: black;
@@ -31,7 +31,6 @@
         flex-direction: column;
         overflow-y : auto;
         padding-right: 1rem;
-        
 
         &::-webkit-scrollbar {
             width: 6px;
