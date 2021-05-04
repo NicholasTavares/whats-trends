@@ -1,0 +1,73 @@
+.trend{
+    position: relative;
+    overflow: hidden;
+    min-height: 14rem;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: #ccc 0rem 0.3em 0.3rem 0;
+    margin-bottom: 1.2rem;
+
+    &__podium{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        transform: translate(-8%, -8%);
+        font-size: 1.2rem;
+        height: 2.1rem;
+        width: 2.1rem;
+        background-color: white;
+        border-radius: 50%;
+        border: 1px solid #ccc;
+        color: #F09100;
+        font-weight: 600;
+    }
+
+    &__popularity{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 0;
+        transform: translate(-20%, 0%);
+        font-size: 1.2rem;
+        white-space: nowrap;
+        height: 2.1rem;
+        background-color: white;
+        color: #1500F7;
+        font-weight: 600;  
+    }
+
+    &__title{
+        margin-top: 0.4rem;
+        color: black;
+        font-weight: 600;
+        font-size: 1.4rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__articles{
+        font-size: 1.2rem;
+        margin-bottom: 0.4rem;
+
+        &__item{
+            cursor: pointer;
+            color: rgb(99, 98, 98);
+            text-decoration: none;
+        }
+
+        &__item:hover{
+            text-decoration: underline;
+        }
+    }
+
+    &__related{
+        font-size: 1.05rem;
+        color:olive;
+    }
+
+}

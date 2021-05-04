@@ -4,7 +4,9 @@ import { bindActionCreators } from 'redux'
 
 // ACTIONS
 import { getDailyTrends } from '../../redux/actions/trendsActions'
-import Graphic from '../graphic/Graphic'
+
+// JSX
+import SideTrends from '../sideTrend/SideTrends'
 
 const Today = props => {
 
@@ -12,25 +14,28 @@ const Today = props => {
 
     console.log(props.countryDaily)
 
-    let podium = 0
 
     return (
-        <div className='container-daily'>
-            <div className='container-daily__container-graphic'>
-                <div>
-                    Mais pequisadas do dia
-                </div>
-                {props.countryDaily ? props.countryDaily.todayTrends.map(t => {
-                    podium++
-                    return (
-                        <Graphic podium={podium} title={t.title.query} popularity={t.formattedTraffic} />
-                    )
-                }) : 'Loading'}
-            </div>
-            <div className='container-daily__container-search'>
+        <div className="container">
+            <div className='container-daily'>
+                <div className='container-daily__side-trends-container'>
+                    <span>Pesquisas do dia</span>
+                    <div className="container-daily__side-trends">
+                        {props.countryDaily ? props.countryDaily.todayTrends.map((trend, i) => {
 
+                            return (
+                                <SideTrends podium={i + 1} title={trend.title.query} popularity={trend.formattedTraffic} article={trend.articles[0].title} linkArticle={trend.articles[0].url}
+                                    TimeArticle={trend.articles[0].timeAgo} SourceArticle={trend.articles[0].source} />
+                            )
+                        }) : 'Loading..'}
+                    </div>
+                </div>
+                <div className='container-daily__state-trends'>
+
+                </div>
             </div>
         </div>
+
     )
 }
 

@@ -9,64 +9,109 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  box-sizing: border-box;
-  overflow: hidden; }
+  font-family: 'Quicksand', sans-serif;
+  box-sizing: border-box; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+  background-color: #f7f7f7; }
 
 .container-daily {
   display: flex;
-  position: relative;
-  width: 100%;
-  height: 75vh;
-  background-color: #ebeef0;
   color: blueviolet; }
-  .container-daily__container-graphic {
+  .container-daily__side-trends-container {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    width: 55rem;
-    height: 40rem;
-    padding: 0 1.5rem 0 1.5rem;
-    overflow-y: scroll; }
-  .container-daily__container-search {
-    position: absolute;
-    transform: translate(50%, -50%);
-    top: 50%;
-    right: 25%;
-    width: 60rem;
-    height: 40rem;
+    width: 22rem;
+    margin-right: 4rem;
+    height: 44rem; }
+    .container-daily__side-trends-container > span {
+      color: black;
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 1rem; }
+  .container-daily__side-trends {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    padding-right: 1rem; }
+    .container-daily__side-trends::-webkit-scrollbar {
+      width: 6px; }
+    .container-daily__side-trends::-webkit-scrollbar-track {
+      background: transparent;
+      padding-left: 10px;
+      /* color of the tracking area */ }
+    .container-daily__side-trends::-webkit-scrollbar-thumb {
+      background-color: gray;
+      /* color of the scroll thumb */
+      border-radius: 20px;
+      /* roundness of the scroll thumb */ }
+  .container-daily__state-trends {
+    width: 100rem;
+    height: 44rem;
     background-color: black; }
 
-.grafic {
-  display: flex;
+.trend {
   position: relative;
-  align-items: center;
-  padding: 0.5rem 1rem 0.5rem 0.5rem;
-  background-color: red;
-  font-weight: 600;
-  color: white;
-  margin-top: 1rem;
-  transition: width 2s;
-  border-radius: 1rem; }
-  .grafic__podium {
-    font-size: 1.5rem;
-    margin: 0 1rem 0 1rem;
-    animation: showPodiumTitle 2s ease-in-out; }
-  .grafic__title {
-    text-overflow: ellipsis;
-    overflow: hidden;
+  overflow: hidden;
+  min-height: 14rem;
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: #ccc 0rem 0.3em 0.3rem 0;
+  margin-bottom: 1.2rem; }
+  .trend__podium {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    transform: translate(-8%, -8%);
+    font-size: 1.2rem;
+    height: 2.1rem;
+    width: 2.1rem;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    color: #F09100;
+    font-weight: 600; }
+  .trend__popularity {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    transform: translate(-20%, 0%);
+    font-size: 1.2rem;
     white-space: nowrap;
-    display: inline-block;
-    font-size: 1.5rem;
-    animation: showPodiumTitle 2s ease-in-out; }
-  .grafic__popularity {
-    display: inline-block;
-    margin-left: auto;
-    font-size: 1.5rem;
-    padding-left: 0.4rem; }
+    height: 2.1rem;
+    background-color: white;
+    color: #1500F7;
+    font-weight: 600; }
+  .trend__title {
+    margin-top: 0.4rem;
+    color: black;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem; }
+  .trend__articles {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem; }
+    .trend__articles__item {
+      cursor: pointer;
+      color: #636262;
+      text-decoration: none; }
+    .trend__articles__item:hover {
+      text-decoration: underline; }
+  .trend__related {
+    font-size: 1.05rem;
+    color: olive; }
 
 @keyframes showPodiumTitle {
   from {
