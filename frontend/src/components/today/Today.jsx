@@ -22,14 +22,14 @@ const Today = props => {
             <div className='container-daily'>
                 <div className='container-daily__side-trends-container'>
                     <div className="container-daily__side-trends">
-                        <Carousel axis={'horizontal'} autoPlay={true} interval={8500} showStatus={false} showThumbs={false} infiniteLoop={true}
+                        {props.countryDaily ? <Carousel autoFocus={true} interval={6000} infiniteLoop={true} autoPlay={true} axis={'horizontal'} showStatus={false} showThumbs={false}
                             renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
                                 hasPrev && (
-                                    <FiChevronLeft style={{ cursor: 'pointer', position: 'absolute', top: '90', bottom: '0', left: '-8', zIndex: '1', fontSize: '40px' }} onClick={clickHandler} />
+                                    <FiChevronLeft style={{ cursor: 'pointer', position: 'absolute', top: '90', bottom: '0', left: '-6', zIndex: '1', fontSize: '40px' }} onClick={clickHandler} />
                                 )
                             } renderArrowNext={(clickHandler, hasPrev, labelPrev) =>
                                 hasPrev && (
-                                    <FiChevronRight style={{ cursor: 'pointer', position: 'absolute', top: '90', bottom: '0', right: '-8', zIndex: '1', fontSize: '40px' }} onClick={clickHandler} />
+                                    <FiChevronRight style={{ cursor: 'pointer', position: 'absolute', top: '90', bottom: '0', right: '-6', zIndex: '1', fontSize: '40px' }} onClick={clickHandler} />
                                 )
                             }>
 
@@ -39,8 +39,9 @@ const Today = props => {
 
                             {props.countryDaily ? props.countryDaily.todayTrends.map((trend, i) => (
                                 <SideTrends key={i} podium={i + 1} title={trend.title.query} popularity={trend.formattedTraffic} article={trend.articles} />
-                            )) : 'Loading...'}
-                        </Carousel>
+                            )) : ''}
+                        </Carousel> : 'Loading...'}
+
                     </div>
                 </div>
                 <div className='container-daily__state-trends'>
