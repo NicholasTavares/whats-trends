@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SideTrends = ({ podium, title, popularity, article, linkArticle, TimeArticle, SourceArticle }) => {
+const SideTrends = ({ podium, title, popularity, article }) => {
 
     return (
         <div className='trend'>
@@ -11,11 +11,19 @@ const SideTrends = ({ podium, title, popularity, article, linkArticle, TimeArtic
             </div>
             <div className="trend__articles">
                 <a className="trend__articles__item" target="_blank"
-                    rel="noopener noreferrer" href={linkArticle}>{article}</a>
+                    rel="noopener noreferrer" href={article[0].url}>{article[0].title}</a>
             </div>
             <div className="trend__related">
-                <span>{TimeArticle} por <strong>{SourceArticle}</strong></span>
+                <span>{article[0].timeAgo} por <strong>{article[0].source}</strong></span>
             </div>
+
+            {article[1] ? <><div className="trend__articles">
+                <a className="trend__articles__item" target="_blank"
+                    rel="noopener noreferrer" href={article[1].url}>{article[1].title}</a>
+            </div>
+                <div className="trend__related">
+                    <span>{article[1].timeAgo} por <strong>{article[1].source}</strong></span>
+                </div></> : ''}
 
         </div>
     )

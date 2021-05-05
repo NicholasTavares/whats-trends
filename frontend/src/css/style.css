@@ -25,10 +25,11 @@ body {
   color: blueviolet; }
   .container-daily__side-trends-container {
     display: flex;
-    flex-direction: column;
-    width: 22rem;
-    margin-right: 4rem;
-    height: 44rem; }
+    justify-content: center;
+    align-items: center;
+    width: 42rem;
+    margin-right: 2rem;
+    height: 24rem; }
     .container-daily__side-trends-container > span {
       color: black;
       display: block;
@@ -37,33 +38,24 @@ body {
   .container-daily__side-trends {
     display: flex;
     flex-direction: column;
-    overflow-y: auto;
-    padding-right: 1rem; }
-    .container-daily__side-trends::-webkit-scrollbar {
-      width: 6px; }
-    .container-daily__side-trends::-webkit-scrollbar-track {
-      background: transparent;
-      padding-left: 10px;
-      /* color of the tracking area */ }
-    .container-daily__side-trends::-webkit-scrollbar-thumb {
-      background-color: gray;
-      /* color of the scroll thumb */
-      border-radius: 20px;
-      /* roundness of the scroll thumb */ }
+    width: 100%;
+    height: 100%; }
   .container-daily__state-trends {
-    width: 100rem;
+    width: 80rem;
     height: 44rem;
     background-color: black; }
 
 .trend {
+  text-align: left;
   position: relative;
   overflow: hidden;
-  min-height: 14rem;
+  height: 22rem;
+  width: 100%;
   background-color: white;
-  padding: 1.5rem;
+  padding: 1rem 2.8rem 0 2.8rem;
   border-radius: 1rem;
   box-shadow: #ccc 0rem 0.3em 0.3rem 0;
-  margin-bottom: 1.2rem; }
+  margin-bottom: 0.5rem; }
   .trend__podium {
     position: absolute;
     display: flex;
@@ -72,9 +64,9 @@ body {
     top: 0;
     left: 0;
     transform: translate(-8%, -8%);
-    font-size: 1.2rem;
-    height: 2.1rem;
-    width: 2.1rem;
+    font-size: 1.5rem;
+    height: 3rem;
+    width: 3rem;
     background-color: white;
     border-radius: 50%;
     border: 1px solid #ccc;
@@ -87,21 +79,21 @@ body {
     align-items: center;
     top: 0;
     right: 0;
-    transform: translate(-20%, 0%);
-    font-size: 1.2rem;
+    transform: translate(-20%, 10%);
+    font-size: 1.5rem;
     white-space: nowrap;
     height: 2.1rem;
     background-color: white;
     color: #1500F7;
     font-weight: 600; }
   .trend__title {
-    margin-top: 0.4rem;
+    margin-top: 2rem;
     color: black;
     font-weight: 600;
-    font-size: 1.4rem;
-    margin-bottom: 0.5rem; }
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem; }
   .trend__articles {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 0.4rem; }
     .trend__articles__item {
       cursor: pointer;
@@ -110,7 +102,8 @@ body {
     .trend__articles__item:hover {
       text-decoration: underline; }
   .trend__related {
-    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
     color: olive; }
 
 @keyframes showPodiumTitle {
