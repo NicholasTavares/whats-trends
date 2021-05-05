@@ -22,7 +22,7 @@ const Today = props => {
             <div className='container-daily'>
                 <div className='container-daily__side-trends-container'>
                     <div className="container-daily__side-trends">
-                        <Carousel axis={'horizontal'} autoPlay={true} interval={10000} showStatus={false} showThumbs={false} infiniteLoop={true}
+                        <Carousel axis={'horizontal'} autoPlay={true} interval={8500} showStatus={false} showThumbs={false} infiniteLoop={true}
                             renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
                                 hasPrev && (
                                     <FiChevronLeft style={{ cursor: 'pointer', position: 'absolute', top: '90', bottom: '0', left: '-8', zIndex: '1', fontSize: '40px' }} onClick={clickHandler} />
