@@ -1,0 +1,113 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  box-sizing: border-box; }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 75vh;
+  background-color: #f7f7f7; }
+
+.container-daily {
+  display: flex;
+  color: blueviolet; }
+  .container-daily__side-trends-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 42rem;
+    margin-right: 2rem;
+    height: 24rem; }
+    .container-daily__side-trends-container > span {
+      color: black;
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 1rem; }
+  .container-daily__side-trends {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%; }
+  .container-daily__state-trends {
+    width: 80rem;
+    height: 44rem;
+    background-color: black; }
+
+.trend {
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  height: 22rem;
+  width: 100%;
+  background-color: white;
+  padding: 1rem 2.8rem 0 2.8rem;
+  border-radius: 1rem;
+  box-shadow: #ccc 0rem 0.3em 0.3rem 0;
+  margin-bottom: 0.5rem; }
+  .trend__podium {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    transform: translate(-8%, -8%);
+    font-size: 1.5rem;
+    height: 3rem;
+    width: 3rem;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    color: #F09100;
+    font-weight: 600; }
+  .trend__popularity {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: 0;
+    transform: translate(-20%, 10%);
+    font-size: 1.5rem;
+    white-space: nowrap;
+    height: 2.1rem;
+    background-color: white;
+    color: #1500F7;
+    font-weight: 600; }
+  .trend__title {
+    margin-top: 2rem;
+    color: black;
+    font-weight: 600;
+    font-size: 1.6rem;
+    margin-bottom: 0.8rem; }
+  .trend__articles {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem; }
+    .trend__articles__item {
+      cursor: pointer;
+      color: #636262;
+      text-decoration: none; }
+    .trend__articles__item:hover {
+      text-decoration: underline; }
+  .trend__related {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    color: olive; }
+
+@keyframes showPodiumTitle {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }

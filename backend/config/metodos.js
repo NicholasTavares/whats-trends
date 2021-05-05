@@ -1,19 +1,27 @@
 const googleTrends = require('google-trends-api');
-/*TODO: mudar o endereço proxy na hora do deploy */
 
-const HttpsProxyAgent = require('https-proxy-agent');
-const proxyAgent = new HttpsProxyAgent('http://localhost:3000/');
+exports.getDailyTrends = async (req, res, next) => {
 
-exports.getOverTime = (req, res) => {
+    let trendsByCountry = await googleTrends.dailyTrends({
+        geo: 'BR',
+        hl: 'PT-BR',
+    })
+    let promRes = await trendsByCountry;
+    let todayTrends = []
+    let todayData = ''
 
-    console.log(`CHAMANDO MÉTODO ${res}`)
-
-    googleTrends.interestOverTime({ keyword: 'Flamengo' })
-        .then(function (results) {
-            console.log(results);
-        })
-        .catch(function (err) {
-            console.error(err);
+    JSON.parse(promRes).default.trendingSearchesDays.forEach(trend => {
+        todayData = ({
+            formattedDate: trend.formattedDate,
         });
+        trend.trendingSearches.forEach(t => {
+            todayTrends.push(t)
+        });
+    });
 
+    if (todayTrends.length > 0) {
+        return res.json({ todayData, todayTrends })
+    } else {
+        return res.json(null)
+    }
 }

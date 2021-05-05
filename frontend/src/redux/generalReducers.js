@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
-import GetInterestKeyword from './reducers/trendsReducer'
+import GetDailyTrends from './reducers/trendsReducer'
 //                  combinar todos reducers
 const rootReducer = combineReducers({
-    keyword: GetInterestKeyword
+    keyword: GetDailyTrends
 })
 
 export default rootReducer
