@@ -49,11 +49,36 @@ body {
     box-shadow: #ccc 0rem 0.3em 0.3rem 0; }
 
 .sports-container {
-  margin: 1rem;
-  padding-left: 1rem;
+  margin: 1rem 0 1rem 0;
+  padding: 0 2rem 0 2rem;
   color: black; }
+  .sports-container__title {
+    margin-bottom: 1.5rem; }
   .sports-container:not(:last-child) {
     border-right: 2px solid black; }
+  .sports-container__topics {
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem; }
+    .sports-container__topics:not(:last-child) {
+      border-bottom: 1px solid #ccc; }
+    .sports-container__topics__title {
+      display: block;
+      color: black;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem; }
+    .sports-container__topics__topics-related {
+      padding-top: 0.5rem;
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center; }
+      .sports-container__topics__topics-related > span {
+        display: inline-block;
+        padding: 0.1rem 0.2rem 0.1rem 0.2rem;
+        border-radius: 0.5rem;
+        text-align: center;
+        border: 1px solid gray; }
 
 .trend {
   text-align: left;
