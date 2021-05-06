@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SideTrends = ({ podium, title, popularity, article }) => {
+const TopTrendsBrasil = ({ podium, title, popularity, article }) => {
 
     return (
         <div className='trend'>
@@ -28,4 +28,4 @@ const SideTrends = ({ podium, title, popularity, article }) => {
         </div>
     )
 }
-export default SideTrends
+export default TopTrendsBrasil

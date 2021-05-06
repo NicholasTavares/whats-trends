@@ -97,7 +97,7 @@ body {
     margin-bottom: 0.4rem; }
     .trend__articles__item {
       cursor: pointer;
-      color: #636262;
+      color: #504e4e;
       text-decoration: none; }
     .trend__articles__item:hover {
       text-decoration: underline; }
