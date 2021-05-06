@@ -12,9 +12,15 @@ const Sports = ({ realTime, getRealTimeTrends }) => {
     console.log(realTime)
 
     return (
-        <div>
-            OPA
-        </div>
+        <section className='sports-container'>
+            <h1>Esportes</h1>
+            <div className='sports-container__topics'>
+                <h2>Campeonato Brasileiro</h2>
+                <span>Campeonato Brasilerio muda de formato
+                mais uma vez em menos de 10 anos.
+                </span>
+            </div>
+        </section>
     )
 }
 
