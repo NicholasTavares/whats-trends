@@ -8,7 +8,7 @@ import { getRealTimeTrends } from '../../redux/actions/trendsActions'
 
 const Sports = ({ realTime, getRealTimeTrends }) => {
 
-    useEffect(() => getRealTimeTrends(), [])
+    useEffect(() => getRealTimeTrends('s'), [])
     console.log(realTime)
 
     return (
@@ -18,9 +18,10 @@ const Sports = ({ realTime, getRealTimeTrends }) => {
                     <h1 className='sports-container__title'>Esportes</h1>
 
                     <div className='sports-container__topics'>
-                        <span className='sports-container__topics__title'>
+                        <a className='sports-container__topics__title' target="_blank"
+                            rel="noopener noreferrer" href={realTime[0].articles[0].url}>
                             {realTime[0].articles[0].articleTitle}
-                        </span>
+                        </a>
                         <p className='sports-container__topics__paragraph'>
                             {realTime[0].articles[0].snippet}
                         </p>
@@ -30,9 +31,10 @@ const Sports = ({ realTime, getRealTimeTrends }) => {
                     </div>
 
                     <div className='sports-container__topics'>
-                        <span className='sports-container__topics__title'>
+                        <a className='sports-container__topics__title' target="_blank"
+                            rel="noopener noreferrer" href={realTime[1].articles[0].url}>
                             {realTime[1].articles[0].articleTitle}
-                        </span>
+                        </a>
                         <p className='sports-container__topics__paragraph'>
                             {realTime[1].articles[0].snippet}
                         </p>
@@ -42,9 +44,10 @@ const Sports = ({ realTime, getRealTimeTrends }) => {
                     </div>
 
                     <div className='sports-container__topics'>
-                        <span className='sports-container__topics__title'>
+                        <a className='sports-container__topics__title' target="_blank"
+                            rel="noopener noreferrer" href={realTime[2].articles[0].url}>
                             {realTime[2].articles[0].articleTitle}
-                        </span>
+                        </a>
                         <p className='sports-container__topics__paragraph'>
                             {realTime[2].articles[0].snippet}
                         </p>
@@ -54,9 +57,10 @@ const Sports = ({ realTime, getRealTimeTrends }) => {
                     </div>
 
                     <div className='sports-container__topics'>
-                        <span className='sports-container__topics__title'>
+                        <a className='sports-container__topics__title' target="_blank"
+                            rel="noopener noreferrer" href={realTime[3].articles[0].url}>
                             {realTime[3].articles[0].articleTitle}
-                        </span>
+                        </a>
                         <p className='sports-container__topics__paragraph'>
                             {realTime[3].articles[0].snippet}
                         </p>

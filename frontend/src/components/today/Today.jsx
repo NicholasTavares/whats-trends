@@ -21,8 +21,6 @@ const Today = ({ daily, getDailyTrends }) => {
                 </div>
                 <div className='container-daily__container-real-time'>
                     <Sports />
-                    <Sports />
-                    <Sports />
                 </div>
             </div>
         </div>

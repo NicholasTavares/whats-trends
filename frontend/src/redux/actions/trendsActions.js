@@ -3,16 +3,15 @@ const BASE_URL = 'http://localhost:3002/api'
 
 export function getDailyTrends() {
     const request = axios.get(`${BASE_URL}/dailytrends`)
-    console.log(`REQUISÇÂO DAILY: ${request.data}`)
     return {
         type: 'DAILY',
         payload: request
     }
 }
 
-export function getRealTimeTrends() {
-    const request = axios.get(`${BASE_URL}/realtimetrends`)
-    console.log(`REQUISÇÂO REALTIME: ${request.data}`)
+export function getRealTimeTrends(category) {
+    const request = axios.get(`${BASE_URL}/realtimetrends?category=${category}`)
+    console.log(`REQUISÇÂO category: ${category}`)
     return {
         type: 'REALTIME',
         payload: request

@@ -65,11 +65,14 @@ body {
     .sports-container__topics:not(:last-child) {
       border-bottom: 1px solid #ccc; }
     .sports-container__topics__title {
+      text-decoration: none;
       display: block;
       color: black;
       font-weight: 600;
       font-size: 1.35rem;
       margin-bottom: 0.5rem; }
+      .sports-container__topics__title:hover {
+        text-decoration: underline; }
     .sports-container__topics__paragraph {
       font-size: 1.1rem;
       overflow: hidden;
