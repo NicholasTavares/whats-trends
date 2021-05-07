@@ -60,6 +60,7 @@ body {
   .sports-container:not(:last-child) {
     border-right: 2px solid black; }
   .sports-container__topics {
+    height: 9.5rem;
     padding-bottom: 0.5rem;
     margin-bottom: 1rem; }
     .sports-container__topics:not(:last-child) {

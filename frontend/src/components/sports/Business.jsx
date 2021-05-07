@@ -4,68 +4,68 @@ import { bindActionCreators } from 'redux'
 
 
 // ACTIONS
-import { getRealTimeTrendsSports } from '../../redux/actions/trendsActions'
+import { getRealTimeTrendsBusiness } from '../../redux/actions/trendsActions'
 
-const Sports = ({ sports, getRealTimeTrendsSports }) => {
+const Business = ({ business, getRealTimeTrendsBusiness }) => {
 
-    useEffect(() => getRealTimeTrendsSports('s'), [])
-    console.log(sports)
+    useEffect(() => getRealTimeTrendsBusiness('e'), [])
+    console.log(business)
 
     return (
         <>
-            {sports ?
+            {business ?
                 <section className='sports-container'>
-                    <h1 className='sports-container__title'>Esportes</h1>
+                    <h1 className='sports-container__title'>Negócios</h1>
 
                     <div className='sports-container__topics'>
                         <a className='sports-container__topics__title' target="_blank"
-                            rel="noopener noreferrer" href={sports[0].articles[0].url}>
-                            {sports[0].articles[0].articleTitle.replace(/&#39;/g, "'")}
+                            rel="noopener noreferrer" href={business[0].articles[0].url}>
+                            {business[0].articles[0].articleTitle.replace(/&#39;/g, "'")}
                         </a>
                         <p className='sports-container__topics__paragraph'>
-                            {sports[0].articles[0].snippet.replace(/&#39;/g, "'")}
+                            {business[0].articles[0].snippet.replace(/&#39;/g, "'")}
                         </p>
                         <div className='sports-container__topics__related'>
-                            <span>{sports[0].articles[0].time} por <strong>{sports[0].articles[0].source}</strong></span>
+                            <span>{business[0].articles[0].time} por <strong>{business[0].articles[0].source}</strong></span>
                         </div>
                     </div>
 
                     <div className='sports-container__topics'>
                         <a className='sports-container__topics__title' target="_blank"
-                            rel="noopener noreferrer" href={sports[1].articles[0].url}>
-                            {sports[1].articles[0].articleTitle.replace(/&#39;/g, "'")}
+                            rel="noopener noreferrer" href={business[1].articles[0].url}>
+                            {business[1].articles[0].articleTitle.replace(/&#39;/g, "'")}
                         </a>
                         <p className='sports-container__topics__paragraph'>
-                            {sports[1].articles[0].snippet.replace(/&#39;/g, "'")}
+                            {business[1].articles[0].snippet.replace(/&#39;/g, "'")}
                         </p>
                         <div className='sports-container__topics__related'>
-                            <span>{sports[1].articles[0].time} por <strong>{sports[1].articles[0].source}</strong></span>
+                            <span>{business[1].articles[0].time} por <strong>{business[1].articles[0].source}</strong></span>
                         </div>
                     </div>
 
                     <div className='sports-container__topics'>
                         <a className='sports-container__topics__title' target="_blank"
-                            rel="noopener noreferrer" href={sports[2].articles[0].url}>
-                            {sports[2].articles[0].articleTitle.replace(/&#39;/g, "'")}
+                            rel="noopener noreferrer" href={business[2].articles[0].url}>
+                            {business[2].articles[0].articleTitle.replace(/&#39;/g, "'")}
                         </a>
                         <p className='sports-container__topics__paragraph'>
-                            {sports[2].articles[0].snippet.replace(/&#39;/g, "'")}
+                            {business[2].articles[0].snippet.replace(/&#39;/g, "'")}
                         </p>
                         <div className='sports-container__topics__related'>
-                            <span>{sports[2].articles[0].time} por <strong>{sports[2].articles[0].source}</strong></span>
+                            <span>{business[2].articles[0].time} por <strong>{business[2].articles[0].source}</strong></span>
                         </div>
                     </div>
 
                     <div className='sports-container__topics'>
                         <a className='sports-container__topics__title' target="_blank"
-                            rel="noopener noreferrer" href={sports[3].articles[0].url}>
-                            {sports[3].articles[0].articleTitle.replace(/&#39;/g, "'")}
+                            rel="noopener noreferrer" href={business[3].articles[0].url}>
+                            {business[3].articles[0].articleTitle.replace(/&#39;/g, "'")}
                         </a>
                         <p className='sports-container__topics__paragraph'>
-                            {sports[3].articles[0].snippet.replace(/&#39;/g, "'")}
+                            {business[3].articles[0].snippet.replace(/&#39;/g, "'")}
                         </p>
                         <div className='sports-container__topics__related'>
-                            <span>{sports[3].articles[0].time} por <strong>{sports[3].articles[0].source}</strong></span>
+                            <span>{business[3].articles[0].time} por <strong>{business[3].articles[0].source}</strong></span>
                         </div>
                     </div>
 
@@ -76,10 +76,10 @@ const Sports = ({ sports, getRealTimeTrendsSports }) => {
 
 
 const mapStatetoProps = state => ({
-    sports: state.sports.sports
+    business: state.business.business
 
 })
 // vai disparar uma chamada para todos os reducers da aplicação se uma função for chamada
-const mapDispatchToProps = dispatch => bindActionCreators({ getRealTimeTrendsSports }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ getRealTimeTrendsBusiness }, dispatch)
 // estou passando para as propriedades de Today
-export default connect(mapStatetoProps, mapDispatchToProps)(Sports)
+export default connect(mapStatetoProps, mapDispatchToProps)(Business)
