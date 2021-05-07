@@ -27,9 +27,13 @@
     }
 
     &__topics{
+        display: flex;
+        flex-direction: column;
         height: 9.5rem;
         padding-bottom: 0.5rem;
         margin-bottom: 1rem;
+
+        
 
         &:not(:last-child){
             border-bottom: 1px solid #ccc;
@@ -38,7 +42,7 @@
         &__title{
             text-decoration: none;
             display: block;
-            color: black;
+            color: #081317;
             font-weight: 600;
             font-size: 1.35rem;
             margin-bottom: 0.5rem;
@@ -55,26 +59,44 @@
         }
 
         &__paragraph{
-            font-size: 1.1rem;
+            display: block;
+            font-size: 1.15rem;
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
-            height: 1.5rem;
         }
 
         &__related{
-            flex-wrap: wrap;
             display: flex;
-            justify-content: flex-start;
             align-items: center;
+            margin-top: auto;   
 
-            & > span{
-                margin-bottom: 0.5rem;
+            &__source{
+                flex-wrap: wrap;
+                width: 92%;
                 margin-top: 0.5rem;
                 font-size: 1.05rem;
                 color:olive;
                 display: inline-block;
-                text-align: center;
+                text-align: left;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
+
+            &__icon{
+                display: block;
+                cursor: pointer;
+                width: 8%;
+                text-align: right;
+                line-height: 1rem;
+                font-size: 1.6rem;
+                transition: all 0.5s;
+
+                &:hover{
+                    transform: scale(1.2);
+                }
+
             }
         }
 
