@@ -1,13 +1,25 @@
-.sports-container{
+.topic-container{
     margin: 1rem 0 1rem 0;
     padding: 0 2rem 0 2rem;
     color: black;
     width: 33.33%;
 
-    &__title{
+    &__title-s{
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
-        color: #ED0C00;
+        color: #F09100;
+    }
+
+    &__title-b{
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: black;
+    }
+
+    &__title-e{
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: #C61142;
     }
     
     &:not(:last-child){
@@ -30,6 +42,12 @@
             font-weight: 600;
             font-size: 1.35rem;
             margin-bottom: 0.5rem;
+
+            overflow: hidden; // Removendo barra de rolagem
+            text-overflow: ellipsis; // Adicionando "..." ao final
+            display: -webkit-box;
+            -webkit-line-clamp: 3; // Quantidade de linhas
+            -webkit-box-orient: vertical; 
 
             &:hover{
                 text-decoration: underline;

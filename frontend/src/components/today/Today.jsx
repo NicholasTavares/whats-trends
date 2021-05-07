@@ -9,6 +9,7 @@ import { getDailyTrends } from '../../redux/actions/trendsActions'
 import Carousel from '../topTrendsBrasil/Carousel'
 import Sports from '../sports/Sports'
 import Business from '../sports/Business'
+import Entertainment from '../sports/Entertainment'
 
 const Today = ({ daily, getDailyTrends }) => {
 
@@ -23,6 +24,7 @@ const Today = ({ daily, getDailyTrends }) => {
                 <div className='container-daily__container-real-time'>
                     <Sports />
                     <Business />
+                    <Entertainment />
                 </div>
             </div>
         </div>
@@ -32,7 +34,7 @@ const Today = ({ daily, getDailyTrends }) => {
 
 
 const mapStatetoProps = state => ({
-    daily: state.daily.countryDaily,
+    daily: state.trend.countryDaily,
 })
 // vai disparar uma chamada para todos os reducers da aplicação se uma função for chamada
 const mapDispatchToProps = dispatch => bindActionCreators({ getDailyTrends }, dispatch)

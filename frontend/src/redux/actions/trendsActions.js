@@ -26,3 +26,12 @@ export function getRealTimeTrendsBusiness(category) {
         payload: request
     }
 }
+
+export function getRealTimeTrendsEntertainment(category) {
+    const request = axios.get(`${BASE_URL}/realtimetrends?category=${category}`)
+    console.log(`REQUISÇÂO category: ${category}`)
+    return {
+        type: 'ENTERTAINMENT',
+        payload: request
+    }
+}

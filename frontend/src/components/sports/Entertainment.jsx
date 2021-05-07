@@ -4,17 +4,17 @@ import { bindActionCreators } from 'redux'
 
 
 // ACTIONS
-import { getRealTimeTrendsBusiness } from '../../redux/actions/trendsActions'
+import { getRealTimeTrendsEntertainment } from '../../redux/actions/trendsActions'
 
-const Business = ({ business, getRealTimeTrendsBusiness }) => {
+const Entertainment = ({ entertainment, getRealTimeTrendsEntertainment }) => {
 
-    useEffect(() => getRealTimeTrendsBusiness('b'), [])
+    useEffect(() => getRealTimeTrendsEntertainment('e'), [])
 
     return (
 
         <section className='topic-container'>
-            <h1 className='topic-container__title-b'>Negócios</h1>
-            {business ? business.map((topic) =>
+            <h1 className='topic-container__title-e'>Entretenimento</h1>
+            {entertainment ? entertainment.map((topic) =>
                 <div className='topic-container__topics'>
                     <a className='topic-container__topics__title' target="_blank"
                         rel="noopener noreferrer" href={topic.articles[0].url}>
@@ -34,10 +34,9 @@ const Business = ({ business, getRealTimeTrendsBusiness }) => {
 
 
 const mapStatetoProps = state => ({
-    business: state.trend.business
-
+    entertainment: state.trend.entertainment
 })
 // vai disparar uma chamada para todos os reducers da aplicação se uma função for chamada
-const mapDispatchToProps = dispatch => bindActionCreators({ getRealTimeTrendsBusiness }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ getRealTimeTrendsEntertainment }, dispatch)
 // estou passando para as propriedades de Today
-export default connect(mapStatetoProps, mapDispatchToProps)(Business)
+export default connect(mapStatetoProps, mapDispatchToProps)(Entertainment)

@@ -11,19 +11,19 @@ const TopTrendsBrasil = ({ podium, title, popularity, article }) => {
             </div>
             <div className="trend__articles">
                 <a className="trend__articles__item" target="_blank"
-                    rel="noopener noreferrer" href={article[0].url}>{article[0].title.replace(/&#39;/g, "'")}</a>
+                    rel="noopener noreferrer" href={article[0].url}>{article[0].title.replace(/[&#39;]/g, "'")}</a>
             </div>
             <div className="trend__related">
                 <span>{article[0].timeAgo} por <strong>{article[0].source}</strong></span>
             </div>
 
-            {article[1] ? <><div className="trend__articles">
+            {article[1] ? <> <div className="trend__articles">
                 <a className="trend__articles__item" target="_blank"
                     rel="noopener noreferrer" href={article[1].url}>{article[1].title}</a>
             </div>
                 <div className="trend__related">
                     <span>{article[1].timeAgo} por <strong>{article[1].source}</strong></span>
-                </div></> : ''}
+                </div> </> : ''}
 
         </div>
     )

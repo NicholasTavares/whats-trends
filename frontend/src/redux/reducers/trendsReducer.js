@@ -6,6 +6,8 @@ export default function (state = {}, action) {
             return { ...state, sports: action.payload.data }
         case 'BUSINESS':
             return { ...state, business: action.payload.data }
+        case 'ENTERTAINMENT':
+            return { ...state, entertainment: action.payload.data }
         default:
             return state
     }
