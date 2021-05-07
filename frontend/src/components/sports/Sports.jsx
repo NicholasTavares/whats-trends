@@ -12,59 +12,61 @@ const Sports = ({ realTime, getRealTimeTrends }) => {
     console.log(realTime)
 
     return (
-        <section className='sports-container'>
-            <h1 className='sports-container__title'>Esportes</h1>
+        <>
+            {realTime ?
+                <section className='sports-container'>
+                    <h1 className='sports-container__title'>Esportes</h1>
 
-            <div className='sports-container__topics'>
-                <span className='sports-container__topics__title'>Campeonato Brasileiro</span>
-                <p className='sports-container__topics__paragraph'>Campeonato Brasilerio muda de formato
-                mais uma vez em menos de 10 anos.
-                </p>
-                <div className='sports-container__topics__topics-related'>
-                    <span>Sport Club Internacional</span><span>Sport Club Internacional</span>
-                </div>
-            </div>
+                    <div className='sports-container__topics'>
+                        <span className='sports-container__topics__title'>
+                            {realTime[0].articles[0].articleTitle}
+                        </span>
+                        <p className='sports-container__topics__paragraph'>
+                            {realTime[0].articles[0].snippet}
+                        </p>
+                        <div className='sports-container__topics__related'>
+                            <span>{realTime[0].articles[0].time} por <strong>{realTime[0].articles[0].source}</strong></span>
+                        </div>
+                    </div>
 
-            <div className='sports-container__topics'>
-                <span className='sports-container__topics__title'>Campeonato Brasileiro</span>
-                <p className='sports-container__topics__paragraph'>Campeonato Brasilerio muda de formato
-                mais uma vez em menos de 10 anos.
-                </p>
-                <div className='sports-container__topics__topics-related'>
-                    <span>Sport Club Internacional</span><span>Sport Club Internacional</span>
-                </div>
-            </div>
+                    <div className='sports-container__topics'>
+                        <span className='sports-container__topics__title'>
+                            {realTime[1].articles[0].articleTitle}
+                        </span>
+                        <p className='sports-container__topics__paragraph'>
+                            {realTime[1].articles[0].snippet}
+                        </p>
+                        <div className='sports-container__topics__related'>
+                            <span>{realTime[1].articles[0].time} por <strong>{realTime[1].articles[0].source}</strong></span>
+                        </div>
+                    </div>
 
-            <div className='sports-container__topics'>
-                <span className='sports-container__topics__title'>Campeonato Brasileiro</span>
-                <p className='sports-container__topics__paragraph'>Campeonato Brasilerio muda de formato
-                mais uma vez em menos de 10 anos.
-                </p>
-                <div className='sports-container__topics__topics-related'>
-                    <span>Sport Club Internacional</span><span>Sport Club Internacional</span>
-                </div>
-            </div>
+                    <div className='sports-container__topics'>
+                        <span className='sports-container__topics__title'>
+                            {realTime[2].articles[0].articleTitle}
+                        </span>
+                        <p className='sports-container__topics__paragraph'>
+                            {realTime[2].articles[0].snippet}
+                        </p>
+                        <div className='sports-container__topics__related'>
+                            <span>{realTime[2].articles[0].time} por <strong>{realTime[2].articles[0].source}</strong></span>
+                        </div>
+                    </div>
 
-            <div className='sports-container__topics'>
-                <span className='sports-container__topics__title'>Campeonato Brasileiro</span>
-                <p className='sports-container__topics__paragraph'>Campeonato Brasilerio muda de formato
-                mais uma vez em menos de 10 anos.
-                </p>
-                <div className='sports-container__topics__topics-related'>
-                    <span>Sport Club Internacional</span><span>Sport Club Internacional</span>
-                </div>
-            </div>
+                    <div className='sports-container__topics'>
+                        <span className='sports-container__topics__title'>
+                            {realTime[3].articles[0].articleTitle}
+                        </span>
+                        <p className='sports-container__topics__paragraph'>
+                            {realTime[3].articles[0].snippet}
+                        </p>
+                        <div className='sports-container__topics__related'>
+                            <span>{realTime[3].articles[0].time} por <strong>{realTime[3].articles[0].source}</strong></span>
+                        </div>
+                    </div>
 
-            <div className='sports-container__topics'>
-                <span className='sports-container__topics__title'>Campeonato Brasileiro</span>
-                <p className='sports-container__topics__paragraph'>Campeonato Brasilerio muda de formato
-                mais uma vez em menos de 10 anos.
-                </p>
-                <div className='sports-container__topics__topics-related'>
-                    <span>Sport Club Internacional</span><span>Sport Club Internacional</span>
-                </div>
-            </div>
-        </section>
+                </section> : 'Loading...'}
+        </>
     )
 }
 

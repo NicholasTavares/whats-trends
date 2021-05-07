@@ -2,9 +2,12 @@
     margin: 1rem 0 1rem 0;
     padding: 0 2rem 0 2rem;
     color: black;
+    width: 33.33%;
 
     &__title{
+        font-size: 1.8rem;
         margin-bottom: 1.5rem;
+        color: #ED0C00;
     }
     
     &:not(:last-child){
@@ -12,8 +15,8 @@
     }
 
     &__topics{
-        margin-bottom: 1rem;
         padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
 
         &:not(:last-child){
             border-bottom: 1px solid #ccc;
@@ -23,23 +26,31 @@
             display: block;
             color: black;
             font-weight: 600;
-            font-size: 1.5rem;
+            font-size: 1.35rem;
             margin-bottom: 0.5rem;
         }
 
-        &__topics-related{
-            padding-top: 0.5rem;
+        &__paragraph{
+            font-size: 1.1rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            height: 1.5rem;
+        }
+
+        &__related{
             flex-wrap: wrap;
             display: flex;
             justify-content: flex-start;
             align-items: center;
 
             & > span{
+                margin-bottom: 0.5rem;
+                margin-top: 0.5rem;
+                font-size: 1.05rem;
+                color:olive;
                 display: inline-block;
-                padding: 0.1rem 0.2rem 0.1rem 0.2rem;
-                border-radius: 0.5rem;
                 text-align: center;
-                border: 1px solid gray;
             }
         }
 

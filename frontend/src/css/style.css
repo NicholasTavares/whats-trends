@@ -17,7 +17,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 75vh;
+  height: 85vh;
   background-color: #f7f7f7; }
 
 .container-daily {
@@ -42,8 +42,8 @@ body {
     height: 100%; }
   .container-daily__container-real-time {
     display: flex;
-    width: 80rem;
-    height: 44rem;
+    width: 84rem;
+    height: 48rem;
     border-radius: 1rem;
     background-color: white;
     box-shadow: #ccc 0rem 0.3em 0.3rem 0; }
@@ -51,34 +51,43 @@ body {
 .sports-container {
   margin: 1rem 0 1rem 0;
   padding: 0 2rem 0 2rem;
-  color: black; }
+  color: black;
+  width: 33.33%; }
   .sports-container__title {
-    margin-bottom: 1.5rem; }
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    color: #ED0C00; }
   .sports-container:not(:last-child) {
     border-right: 2px solid black; }
   .sports-container__topics {
-    margin-bottom: 1rem;
-    padding-bottom: 0.5rem; }
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem; }
     .sports-container__topics:not(:last-child) {
       border-bottom: 1px solid #ccc; }
     .sports-container__topics__title {
       display: block;
       color: black;
       font-weight: 600;
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       margin-bottom: 0.5rem; }
-    .sports-container__topics__topics-related {
-      padding-top: 0.5rem;
+    .sports-container__topics__paragraph {
+      font-size: 1.1rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height: 1.5rem; }
+    .sports-container__topics__related {
       flex-wrap: wrap;
       display: flex;
       justify-content: flex-start;
       align-items: center; }
-      .sports-container__topics__topics-related > span {
+      .sports-container__topics__related > span {
+        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+        font-size: 1.05rem;
+        color: olive;
         display: inline-block;
-        padding: 0.1rem 0.2rem 0.1rem 0.2rem;
-        border-radius: 0.5rem;
-        text-align: center;
-        border: 1px solid gray; }
+        text-align: center; }
 
 .trend {
   text-align: left;
