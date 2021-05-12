@@ -3,9 +3,32 @@ const BASE_URL = 'http://localhost:3002/api'
 
 export function getDailyTrends() {
     const request = axios.get(`${BASE_URL}/dailytrends`)
-    console.log(`REQUISÇÂO KEYWORD: ${request.data}`)
     return {
-        type: 'KEYWORD',
+        type: 'DAILY',
+        payload: request
+    }
+}
+
+export function getRealTimeTrendsSports(category) {
+    const request = axios.get(`${BASE_URL}/realtimetrends?category=${category}`)
+    return {
+        type: 'SPORTS',
+        payload: request
+    }
+}
+
+export function getRealTimeTrendsBusiness(category) {
+    const request = axios.get(`${BASE_URL}/realtimetrends?category=${category}`)
+    return {
+        type: 'BUSINESS',
+        payload: request
+    }
+}
+
+export function getRealTimeTrendsEntertainment(category) {
+    const request = axios.get(`${BASE_URL}/realtimetrends?category=${category}`)
+    return {
+        type: 'ENTERTAINMENT',
         payload: request
     }
 }
