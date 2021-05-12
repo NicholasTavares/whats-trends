@@ -11,7 +11,6 @@ export function getDailyTrends() {
 
 export function getRealTimeTrendsSports(category) {
     const request = axios.get(`${BASE_URL}/realtimetrends?category=${category}`)
-    console.log(`REQUISÇÂO category: ${category}`)
     return {
         type: 'SPORTS',
         payload: request
@@ -20,7 +19,6 @@ export function getRealTimeTrendsSports(category) {
 
 export function getRealTimeTrendsBusiness(category) {
     const request = axios.get(`${BASE_URL}/realtimetrends?category=${category}`)
-    console.log(`REQUISÇÂO category: ${category}`)
     return {
         type: 'BUSINESS',
         payload: request
@@ -29,7 +27,6 @@ export function getRealTimeTrendsBusiness(category) {
 
 export function getRealTimeTrendsEntertainment(category) {
     const request = axios.get(`${BASE_URL}/realtimetrends?category=${category}`)
-    console.log(`REQUISÇÂO category: ${category}`)
     return {
         type: 'ENTERTAINMENT',
         payload: request

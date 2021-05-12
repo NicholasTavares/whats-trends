@@ -11,9 +11,56 @@
     }
 
     &__title-b{
+        position: relative;
+        display: flex;
         font-size: 1.8rem;
+        font-weight: 600;
         margin-bottom: 1.5rem;
         color: black;
+
+        &__arrow{
+            position: relative;
+            margin-left: 0.25rem;
+            margin-right: 0.25rem;
+
+            & > svg:hover{
+                cursor: pointer;
+            }
+        }
+
+        &__options{
+            position: absolute;
+            width: 11rem;
+            height: 5rem;
+            background-color: white;
+            border: 1px solid grey;
+            box-shadow: #ccc 0rem 0.3em 0.3rem 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+
+
+            &__option{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 50%;
+
+                &:not(:last-child){
+                    border-bottom: 1px solid grey;
+                }
+
+                & > span{
+                    font-size: 1.1rem;
+                    color: black;
+                }
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: #f7f7f7;
+                }
+            }
+        }
     }
 
     &__title-e{
@@ -94,7 +141,7 @@
                 transition: all 0.5s;
 
                 &:hover{
-                    transform: scale(1.2);
+                    transform: scale(1.15);
                 }
 
             }

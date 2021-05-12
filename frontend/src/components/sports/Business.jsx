@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GiExpand } from 'react-icons/gi'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+import { FiChevronDown } from 'react-icons/fi'
 
 
 // ACTIONS
@@ -11,10 +12,51 @@ const Business = ({ business, getRealTimeTrendsBusiness }) => {
 
     useEffect(() => getRealTimeTrendsBusiness('b'), [])
 
+    const [slide, setSlide] = useState(false)
+    const [option, setOptions] = useState(['Negócios', 'Ciência e Tecnologia', 'Saúde'])
+
+    const changeOptions = (textOption) => {
+        option.filter((el, i) => {
+            if (el === textOption) {
+                option[i] = option[0]
+                option[0] = el
+                console.log(option, el)
+                setOptions(option)
+            }
+        })
+        if (option[0] === 'Negócios') {
+            getRealTimeTrendsBusiness('b')
+        }
+        if (option[0] === 'Ciência e Tecnologia') {
+            getRealTimeTrendsBusiness('t')
+        }
+        if (option[0] === 'Saúde') {
+            getRealTimeTrendsBusiness('m')
+        }
+    }
+
     return (
 
         <section className='topic-container'>
-            <h1 className='topic-container__title-b'>Negócios</h1>
+            <div className='topic-container__title-b'>
+                <span>{option[0]}</span>
+                <div className='topic-container__title-b__arrow' onClick={() => setSlide(!slide)}>
+                    <FiChevronDown />
+
+                    {slide ?
+                        <div className='topic-container__title-b__options'>
+                            <div className="topic-container__title-b__options__option"
+                                onClick={(e) => changeOptions(e.target.innerText)}>
+                                <span>{option[1]}</span>
+                            </div>
+                            <div className="topic-container__title-b__options__option"
+                                onClick={(e) => changeOptions(e.target.innerText)}>
+                                <span>{option[2]}</span>
+                            </div>
+                        </div> :
+                        ''}
+                </div>
+            </div>
             {business ? business.map((topic, i) =>
                 <div className='topic-container__topics' key={i}>
                     <a className='topic-container__topics__title' target="_blank"

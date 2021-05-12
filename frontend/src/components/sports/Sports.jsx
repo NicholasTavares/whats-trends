@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { GiExpand } from 'react-icons/gi'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+
 
 
 // ACTIONS
@@ -10,7 +11,6 @@ import { getRealTimeTrendsSports } from '../../redux/actions/trendsActions'
 const Sports = ({ sports, getRealTimeTrendsSports }) => {
 
     useEffect(() => getRealTimeTrendsSports('s'), [])
-    console.log(sports)
 
     return (
         <section className='topic-container'>
