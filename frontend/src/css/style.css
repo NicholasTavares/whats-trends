@@ -76,7 +76,7 @@ body {
       height: 5rem;
       background-color: white;
       border: 1px solid grey;
-      box-shadow: #ccc 0rem 0.3em 0.3rem 0;
+      box-shadow: #e6e6e6 0rem 0.2em 0.4rem 0;
       border-radius: 0.5rem;
       overflow: hidden; }
       .topic-container__title-b__options__option {

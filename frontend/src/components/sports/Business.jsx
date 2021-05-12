@@ -20,10 +20,10 @@ const Business = ({ business, getRealTimeTrendsBusiness }) => {
             if (el === textOption) {
                 option[i] = option[0]
                 option[0] = el
-                console.log(option, el)
                 setOptions(option)
             }
         })
+
         if (option[0] === 'Negócios') {
             getRealTimeTrendsBusiness('b')
         }
