@@ -7,10 +7,14 @@ import { getInterestByRegion } from '../../redux/actions/trendsActions'
 
 const Region = ({ region, getInterestByRegion }) => {
 
-    useEffect(() => getInterestByRegion('Flamengo'), [])
+    useEffect(() => getInterestByRegion('Harry Potter'), [])
 
     return (
-        <div>OPA</div>
+        <div className='trend'>
+            <div className='region_container'>
+
+            </div>
+        </div>
     )
 }
 
