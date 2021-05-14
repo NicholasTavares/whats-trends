@@ -1,5 +1,4 @@
 import axios from 'axios'
-import { Component } from 'react'
 const BASE_URL = 'http://localhost:3002/api'
 
 export function getDailyTrends() {
@@ -34,9 +33,14 @@ export function getRealTimeTrendsEntertainment(category) {
     }
 }
 
-export function getInterestByRegion(keyword, region) {
-    console.log('KEYWORD: ', keyword)
-    const request = axios.get(`${BASE_URL}/interestbyregiontrends?keyword=${keyword}`)
+export function getInterestByRegion(keyword, data) {
+    console.log('REGION: ', keyword, data)
+    const request = axios.get(`${BASE_URL}/interestbyregiontrends`, {
+        params: {
+            keyword: keyword,
+            data: data || null
+        }
+    })
     return {
         type: 'REGION',
         payload: request
