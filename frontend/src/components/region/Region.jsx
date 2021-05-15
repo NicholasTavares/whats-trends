@@ -10,7 +10,7 @@ import { getInterestByRegion } from '../../redux/actions/trendsActions'
 
 const Region = ({ region, getInterestByRegion }) => {
     const inputText = useRef(null)
-    useEffect(() => getInterestByRegion('Flow Podcast'), [])
+    useEffect(() => getInterestByRegion(), [])
     const [value, onChange] = useState(new Date());
     const [message, setMessage] = useState(null)
 
@@ -25,15 +25,15 @@ const Region = ({ region, getInterestByRegion }) => {
         getInterestByRegion(inputText.current.value, value)
     }
 
-
     return (
         <section className='trend2'>
             <div className='region_container'>
                 <div className='region_container__search'>
                     <div className="region_container__search-text">
-                        <input ref={inputText} type="text" placeholder='Flamengo' />
+                        <input ref={inputText} type="text" placeholder='Acarajé' />
                         <span style={{ display: 'inline-block', padding: '0.2rem', color: 'red', fontWeight: '600', marginBottom: '1rem' }}>
                             {message ? message : ''}
+
                         </span>
                     </div>
                     <DatePicker
@@ -57,6 +57,16 @@ const Region = ({ region, getInterestByRegion }) => {
                         </span>
                     </div>
                 </div>
+                {region && !message ?
+                    <div className="region_container__search-text__message">
+                        <span>
+                            Estados mais interessados em <strong style={{ color: 'blueviolet', textDecoration: 'underline' }}>
+                                {region[0].keyword}
+                            </strong> de <strong>{region[0].startTime}</strong> até <strong>
+                                {region[0].endTime}</strong>:
+                        </span>
+                    </div> : ''}
+
 
                 <div className='region_container__search-result__row' style={{ border: 'none' }}>
                     <div className="region_container__search-result__col-rank">Rank</div>
@@ -64,17 +74,19 @@ const Region = ({ region, getInterestByRegion }) => {
                     <div className="region_container__search-result__col-title">Popularidade</div>
                 </div>
                 <div className='region_container__search-result__container-result'>
-                    <div className='region_container__search-result__row'>
-                        <div className="region_container__search-result__col-rank-data">
-                            <span>1</span>
+                    {region ? region.map((res, i) => (
+                        <div className='region_container__search-result__row'>
+                            <div className="region_container__search-result__col-rank-data">
+                                <span style={{ color: '#F09100' }}><strong>{i + 1}</strong></span>
+                            </div>
+                            <div className="region_container__search-result__col-data">
+                                <span>{res.name}</span>
+                            </div>
+                            <div className="region_container__search-result__col-data">
+                                <span>{res.value}</span>
+                            </div>
                         </div>
-                        <div className="region_container__search-result__col-data">
-                            <span>Rio Grande Do Norte</span>
-                        </div>
-                        <div className="region_container__search-result__col-data">
-                            <span>95</span>
-                        </div>
-                    </div>
+                    )) : 'Loading...'}
                 </div>
 
             </div>

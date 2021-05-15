@@ -35,6 +35,12 @@
             text-decoration: none;
             outline: none;
         }
+
+        &__message{
+            font-size: 1.3rem;
+            padding: 0.2rem;
+            color: #081317;
+        }
     }
 
     &__search-button{
@@ -56,7 +62,7 @@
         
 
     &__search-result__container-result{
-        max-height: 14rem;
+        max-height: 12rem;
         overflow-y: scroll;
     }
 

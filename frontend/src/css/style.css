@@ -246,6 +246,10 @@ body {
       padding-right: 0.8rem;
       text-decoration: none;
       outline: none; }
+    .region_container__search-text__message {
+      font-size: 1.3rem;
+      padding: 0.2rem;
+      color: #081317; }
   .region_container__search-button {
     cursor: pointer;
     margin-left: 1.5rem;
@@ -260,7 +264,7 @@ body {
       color: #555555;
       transform: scale(0.9); }
   .region_container__search-result__container-result {
-    max-height: 14rem;
+    max-height: 12rem;
     overflow-y: scroll; }
   .region_container__search-result__row {
     display: flex;
