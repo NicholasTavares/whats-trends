@@ -27,7 +27,7 @@ const Region = ({ region, getInterestByRegion }) => {
 
 
     return (
-        <section className='trend'>
+        <section className='trend2'>
             <div className='region_container'>
                 <div className='region_container__search'>
                     <div className="region_container__search-text">
@@ -57,6 +57,26 @@ const Region = ({ region, getInterestByRegion }) => {
                         </span>
                     </div>
                 </div>
+
+                <div className='region_container__search-result__row' style={{ border: 'none' }}>
+                    <div className="region_container__search-result__col-rank">Rank</div>
+                    <div className="region_container__search-result__col-title">Estado</div>
+                    <div className="region_container__search-result__col-title">Popularidade</div>
+                </div>
+                <div className='region_container__search-result__container-result'>
+                    <div className='region_container__search-result__row'>
+                        <div className="region_container__search-result__col-rank-data">
+                            <span>1</span>
+                        </div>
+                        <div className="region_container__search-result__col-data">
+                            <span>Rio Grande Do Norte</span>
+                        </div>
+                        <div className="region_container__search-result__col-data">
+                            <span>95</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </section>
     )

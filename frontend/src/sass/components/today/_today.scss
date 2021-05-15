@@ -12,13 +12,13 @@
     color: blueviolet;
 
     &__side-trends-container{
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         width: 42rem;
         margin-right: 2rem;
-        height: 24rem;
 
         & > span{
             color: black;

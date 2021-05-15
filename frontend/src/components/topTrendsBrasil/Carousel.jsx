@@ -3,6 +3,8 @@ import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+import Region from '../region/Region'
+
 // JSX
 import TopTrendsBrasil from './TopTrendsBrasil'
 
@@ -29,7 +31,7 @@ const CarouselContiner = ({ daily }) => {
                     <TopTrendsBrasil key={i} podium={i + 1} title={trend.title.query} popularity={trend.formattedTraffic} article={trend.articles} />
                 )) : ''}
             </Carousel> : 'Loading...'}
-
+            <Region />
         </div>
     )
 }

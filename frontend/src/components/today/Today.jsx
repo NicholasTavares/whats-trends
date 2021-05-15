@@ -10,7 +10,6 @@ import Carousel from '../topTrendsBrasil/Carousel'
 import Sports from '../topics/Sports'
 import Business from '../topics/Business'
 import Entertainment from '../topics/Entertainment'
-import Region from '../region/Region'
 
 const Today = ({ daily, getDailyTrends }) => {
 
@@ -21,7 +20,6 @@ const Today = ({ daily, getDailyTrends }) => {
             <div className='container-daily'>
                 <div className='container-daily__side-trends-container'>
                     <Carousel daily={daily} />
-                    <Region />
                 </div>
 
                 <div className='container-daily__container-real-time'>

@@ -10,11 +10,6 @@
     box-shadow: #ccc 0rem 0.3em 0.3rem 0;
     margin-bottom: 0.5rem;
 
-    &:not(:first-child){
-        margin-top: 1.5rem;
-        overflow: visible;
-    }
-
     &__podium{
         position: absolute;
         display: flex;
