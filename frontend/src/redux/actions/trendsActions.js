@@ -32,3 +32,17 @@ export function getRealTimeTrendsEntertainment(category) {
         payload: request
     }
 }
+
+export function getInterestByRegion(keyword, data) {
+    console.log('REGION: ', keyword, data)
+    const request = axios.get(`${BASE_URL}/interestbyregiontrends`, {
+        params: {
+            keyword: keyword,
+            data: data || null
+        }
+    })
+    return {
+        type: 'REGION',
+        payload: request
+    }
+}

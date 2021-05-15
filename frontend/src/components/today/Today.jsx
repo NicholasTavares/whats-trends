@@ -7,9 +7,9 @@ import { getDailyTrends } from '../../redux/actions/trendsActions'
 
 // JSX
 import Carousel from '../topTrendsBrasil/Carousel'
-import Sports from '../sports/Sports'
-import Business from '../sports/Business'
-import Entertainment from '../sports/Entertainment'
+import Sports from '../topics/Sports'
+import Business from '../topics/Business'
+import Entertainment from '../topics/Entertainment'
 
 const Today = ({ daily, getDailyTrends }) => {
 
@@ -21,6 +21,7 @@ const Today = ({ daily, getDailyTrends }) => {
                 <div className='container-daily__side-trends-container'>
                     <Carousel daily={daily} />
                 </div>
+
                 <div className='container-daily__container-real-time'>
                     <Business />
                     <Sports />
