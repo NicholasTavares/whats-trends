@@ -10,8 +10,10 @@ server.use(allowCors)
 server.use(queryParser())
 
 //Definir URL base para todas as rotas
-const { getDailyTrends } = require('./metodos')
+const { getDailyTrends, getRealTimeTrends, getInterestByRegion } = require('./metodos')
 server.get('/api/dailytrends', getDailyTrends)
+server.get('/api/realtimetrends', getRealTimeTrends)
+server.get('/api/interestbyregiontrends', getInterestByRegion)
 
 server.listen(3002, console.log('SERVIDOR RODANDO'))
 
