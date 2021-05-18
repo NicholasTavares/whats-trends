@@ -10,7 +10,7 @@ import { getInterestByRegion } from '../../redux/actions/trendsActions'
 
 const Region = ({ region, getInterestByRegion }) => {
     const inputText = useRef(null)
-    useEffect(() => getInterestByRegion(), [])
+    useEffect(() => getInterestByRegion('BR'), [])
     const [value, onChange] = useState(new Date());
     const [message, setMessage] = useState(null)
 
@@ -22,7 +22,7 @@ const Region = ({ region, getInterestByRegion }) => {
             return setMessage('Digite um intervalo de data')
         }
         setMessage(null)
-        getInterestByRegion(inputText.current.value, value)
+        getInterestByRegion('BR', inputText.current.value, value)
     }
 
     return (
@@ -75,7 +75,7 @@ const Region = ({ region, getInterestByRegion }) => {
                 </div>
                 <div className='region_container__search-result__container-result'>
                     {region ? region.map((res, i) => (
-                        <div className='region_container__search-result__row'>
+                        <div className='region_container__search-result__row' key={i}>
                             <div className="region_container__search-result__col-rank-data">
                                 <span style={{ color: '#F09100' }}><strong>{i + 1}</strong></span>
                             </div>

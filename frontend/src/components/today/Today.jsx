@@ -21,12 +21,18 @@ const Today = ({ daily, getDailyTrends }) => {
                 <div className='container-daily__side-trends-container'>
                     <Carousel daily={daily} />
                 </div>
+                <div>
+                    <div className='container-daily__container-real-time'>
+                        <Business />
+                        <Sports />
+                        <Entertainment />
+                    </div>
+                    <div className='container-daily__container-real-time'>
+                        <Entertainment />
+                    </div>
 
-                <div className='container-daily__container-real-time'>
-                    <Business />
-                    <Sports />
-                    <Entertainment />
                 </div>
+
             </div>
         </div>
 
