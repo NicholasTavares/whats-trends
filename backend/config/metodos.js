@@ -29,8 +29,6 @@ exports.getDailyTrends = async (req, res, next) => {
 
 exports.getRealTimeTrends = async (req, res, next) => {
 
-    console.log('CATEGORY: ', req.query)
-
     let trendsRealTime = await googleTrends.realTimeTrends({
         geo: 'BR',
         category: req.query.category,
@@ -54,23 +52,39 @@ exports.getRealTimeTrends = async (req, res, next) => {
 
 exports.getInterestByRegion = async (req, res, next) => {
 
-    console.log('CATEGORY: ', req.query)
+    console.log('REGION: ', req.query)
+
+    let keyword = req.query.keyword || 'Acarajé'
+    if (req.query.data) {
+        startTime = new Date(req.query.data[0])
+        endTime = new Date(req.query.data[1])
+    } else {
+        startTime = new Date('01-01-2004')
+        endTime = new Date()
+    }
 
     let trendsRealTime = await googleTrends.interestByRegion({
+        keyword: keyword,
+        startTime: startTime,
+        endTime: endTime,
         geo: 'BR',
         hl: 'PT-BR',
     })
     let promRes = await trendsRealTime;
-    let RealTimeTrends = []
+    let trendsRegion = []
 
-    for (let i = 0; i < 4; i++) {
-        if (JSON.parse(promRes).storySummaries.trendingStories[i]) {
-            RealTimeTrends.push(JSON.parse(promRes).storySummaries.trendingStories[i])
-        }
-    }
+    JSON.parse(promRes).default.geoMapData.forEach(r => {
+        trendsRegion.push({
+            keyword: keyword,
+            name: r.geoName,
+            value: r.value,
+            startTime: moment(startTime).format("LL"),
+            endTime: moment(endTime).format("LL")
+        });
+    })
 
-    if (RealTimeTrends.length > 0) {
-        return res.json(RealTimeTrends)
+    if (trendsRegion.length > 0) {
+        return res.json(trendsRegion)
     } else {
         return res.json(null)
     }
