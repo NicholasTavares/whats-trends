@@ -1,49 +1,31 @@
-import React, { useEffect } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-
-// ACTIONS
-import { getDailyTrends } from '../../redux/actions/trendsActions'
+import React from 'react'
 
 // JSX
 import Carousel from '../topTrendsBrasil/Carousel'
 import Sports from '../topics/Sports'
 import Business from '../topics/Business'
 import Entertainment from '../topics/Entertainment'
+import Region from '../region/Region'
 
-const Today = ({ daily, getDailyTrends }) => {
-
-    useEffect(() => getDailyTrends(), [])
+const Today = () => {
 
     return (
         <div className="container">
-            <div className='container-daily'>
-                <div className='container-daily__side-trends-container'>
-                    <Carousel daily={daily} />
+            <main className='container-daily'>
+                <div className='container-daily__trends'>
+                    <Carousel />
+                    <Region />
                 </div>
-                <div>
-                    <div className='container-daily__container-real-time'>
-                        <Business />
-                        <Sports />
-                        <Entertainment />
-                    </div>
-                    <div className='container-daily__container-real-time'>
-                        <Entertainment />
-                    </div>
-
+                <div className='container-daily__news'>
+                    <Business />
+                    <Sports />
+                    <Entertainment />
                 </div>
-
-            </div>
+            </main>
         </div>
 
     )
 }
 
 
-const mapStatetoProps = state => ({
-    daily: state.trend.countryDaily,
-})
-// vai disparar uma chamada para todos os reducers da aplicação se uma função for chamada
-const mapDispatchToProps = dispatch => bindActionCreators({ getDailyTrends }, dispatch)
-// estou passando para as propriedades de Today
-export default connect(mapStatetoProps, mapDispatchToProps)(Today)
+export default Today

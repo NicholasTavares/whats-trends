@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 import { Carousel } from 'react-responsive-carousel'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import Region from '../region/Region'
+//ACTIONS
+import { getDailyTrends } from '../../redux/actions/trendsActions'
 
 // JSX
 import TopTrendsBrasil from './TopTrendsBrasil'
 
-const CarouselContiner = ({ daily }) => {
+const CarouselContiner = ({ daily, getDailyTrends }) => {
+
+    useEffect(() => getDailyTrends(), [])
 
     return (
-        <div className="container-daily__side-trends">
+        // O carrossel precisa de um container devido ao css integrado da api
+        // Há um bug da api do carrosel que só pode ser evitado se houver uma checagem dos dados antes, pra depois renderizar.
+        <div className="container-daily__container-carousel">
             {daily ? <Carousel autoFocus={true} interval={8500} infiniteLoop={true} autoPlay={true} axis={'horizontal'} showStatus={false} showThumbs={false}
                 renderArrowPrev={(clickHandler, hasPrev, labelPrev) =>
                     hasPrev && (
@@ -31,9 +38,14 @@ const CarouselContiner = ({ daily }) => {
                     <TopTrendsBrasil key={i} podium={i + 1} title={trend.title.query} popularity={trend.formattedTraffic} article={trend.articles} />
                 )) : ''}
             </Carousel> : 'Loading...'}
-            <Region />
         </div>
     )
 }
 
-export default CarouselContiner
+const mapStatetoProps = state => ({
+    daily: state.trend.countryDaily,
+})
+// vai disparar uma chamada para todos os reducers da aplicação se 'getDailyTrends' for chamada
+const mapDispatchToProps = dispatch => bindActionCreators({ getDailyTrends }, dispatch)
+// estou passando para as propriedades de Today
+export default connect(mapStatetoProps, mapDispatchToProps)(CarouselContiner)

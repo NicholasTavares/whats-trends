@@ -26,69 +26,66 @@ const Region = ({ region, getInterestByRegion }) => {
     }
 
     return (
-        <section className='trend2'>
-            <div className='region_container'>
-                <div className='region_container__search'>
-                    <div className="region_container__search-text">
-                        <input ref={inputText} type="text" placeholder='Acarajé' />
-                        <span style={{ display: 'inline-block', padding: '0.2rem', color: 'red', fontWeight: '600', marginBottom: '1rem' }}>
-                            {message ? message : ''}
+        <section className='region_container'>
+            <div className='region_container__search'>
+                <div className="region_container__search-text">
+                    <input ref={inputText} type="text" placeholder='Acarajé' />
+                    <span style={{ display: 'inline-block', padding: '0.2rem', color: 'red', fontWeight: '600', marginBottom: '1rem' }}>
+                        {message ? message : ''}
 
-                        </span>
-                    </div>
-                    <DatePicker
-                        className={'calendario'}
-                        required={true}
-                        selectRange={true}
-                        showNavigation={true}
-                        locale={"PT-BR"}
-                        calendarIcon={<FaCalendarAlt />}
-                        format={'d/M/y'}
-                        minDate={new Date('01/01/2004')}
-                        maxDate={new Date()}
-                        returnValue={'range'}
-                        onChange={onChange}
-                        value={value}
-                        defaultValue={[new Date('01/01/2004'), new Date()]}
-                    />
-                    <div className="region_container__search-button" onClick={() => SearchTerm()}>
-                        <span style={{ display: 'inline-block' }}>
-                            <ImSearch />
-                        </span>
-                    </div>
+                    </span>
                 </div>
-                {region && !message ?
-                    <div className="region_container__search-text__message">
-                        <span>
-                            Estados mais interessados em <strong style={{ color: 'blueviolet', textDecoration: 'underline' }}>
-                                {region[0].keyword}
-                            </strong> de <strong>{region[0].startTime}</strong> até <strong>
-                                {region[0].endTime}</strong>:
-                        </span>
-                    </div> : ''}
-
-
-                <div className='region_container__search-result__row' style={{ border: 'none' }}>
-                    <div className="region_container__search-result__col-rank">Rank</div>
-                    <div className="region_container__search-result__col-title">Estado</div>
-                    <div className="region_container__search-result__col-title">Popularidade</div>
+                <DatePicker
+                    className={'calendario'}
+                    required={true}
+                    selectRange={true}
+                    showNavigation={true}
+                    locale={"PT-BR"}
+                    calendarIcon={<FaCalendarAlt />}
+                    format={'d/M/y'}
+                    minDate={new Date('01/01/2004')}
+                    maxDate={new Date()}
+                    returnValue={'range'}
+                    onChange={onChange}
+                    value={value}
+                    defaultValue={[new Date('01/01/2004'), new Date()]}
+                />
+                <div className="region_container__search-button" onClick={() => SearchTerm()}>
+                    <span style={{ display: 'inline-block' }}>
+                        <ImSearch />
+                    </span>
                 </div>
-                <div className='region_container__search-result__container-result'>
-                    {region ? region.map((res, i) => (
-                        <div className='region_container__search-result__row' key={i}>
-                            <div className="region_container__search-result__col-rank-data">
-                                <span style={{ color: '#F09100' }}><strong>{i + 1}</strong></span>
-                            </div>
-                            <div className="region_container__search-result__col-data">
-                                <span>{res.name}</span>
-                            </div>
-                            <div className="region_container__search-result__col-data">
-                                <span>{res.value}</span>
-                            </div>
+            </div>
+            {region && !message ?
+                <div className="region_container__search-text__message">
+                    <span>
+                        Estados mais interessados em <strong style={{ color: 'blueviolet', textDecoration: 'underline' }}>
+                            {region[0].keyword}
+                        </strong> de <strong>{region[0].startTime}</strong> até <strong>
+                            {region[0].endTime}</strong>:
+                        </span>
+                </div> : ''}
+
+
+            <div className='region_container__search-result__row' style={{ border: 'none' }}>
+                <div className="region_container__search-result__col-rank">Rank</div>
+                <div className="region_container__search-result__col-title">Estado</div>
+                <div className="region_container__search-result__col-title">Popularidade</div>
+            </div>
+            <div className='region_container__search-result__container-result'>
+                {region ? region.map((res, i) => (
+                    <div className='region_container__search-result__row' key={i}>
+                        <div className="region_container__search-result__col-rank-data">
+                            <span style={{ color: '#F09100' }}><strong>{i + 1}</strong></span>
                         </div>
-                    )) : 'Loading...'}
-                </div>
-
+                        <div className="region_container__search-result__col-data">
+                            <span>{res.name}</span>
+                        </div>
+                        <div className="region_container__search-result__col-data">
+                            <span>{res.value}</span>
+                        </div>
+                    </div>
+                )) : 'Loading...'}
             </div>
         </section>
     )
