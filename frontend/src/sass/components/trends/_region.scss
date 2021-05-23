@@ -3,12 +3,11 @@
     flex-direction: column;
     text-align: left;
     width: 100%;
-    height: 26.5rem;
+    height: 34rem;
     background-color: white;
     padding: 1rem 3rem 0 3rem;
     border-radius: 1rem;
     box-shadow: #ccc 0rem 0.3em 0.3rem 0;
-    margin-top: 1.5rem;
 
     @include respond (tab-land) {
         width: 40.5rem;

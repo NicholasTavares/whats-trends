@@ -6,6 +6,7 @@ import Sports from '../topics/Sports'
 import Business from '../topics/Business'
 import Entertainment from '../topics/Entertainment'
 import Region from '../region/Region'
+import ST from '../topics/ST'
 
 const Today = () => {
 
@@ -20,7 +21,7 @@ const Today = () => {
                 <div className="container__container-news">
                     <Business />
                     <Sports />
-                    <Entertainment />
+                    <ST />
                 </div>
                 <div className="container__container-entertainment">
                     <Entertainment horizontal={true} />
