@@ -1,13 +1,14 @@
-.topic-container{
+.topic-container-horizontal{
     margin: 1rem 0 1rem 0;
     padding: 0 2rem 0 2rem;
     color: black;
-    width: 33.33%;
+    min-width: 28rem;
 
     &__title-s{
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
         color: #F09100;
+        border-bottom: 2px solid #F09100;
     }
 
     &__title-b{
@@ -17,6 +18,7 @@
         font-weight: 600;
         margin-bottom: 1.5rem;
         color: black;
+        border-bottom: 2px solid black;
 
         &__arrow{
             position: relative;
@@ -67,10 +69,16 @@
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
         color: #C61142;
+        border-bottom: 2px solid #C61142;
     }
     
     &:not(:last-child){
-        border-right: 1px solid black;
+        border-right: none;
+        margin-bottom: 0;
+    }
+
+    &__container-data{
+        display: flex;
     }
 
     &__topics{
@@ -79,11 +87,12 @@
         height: 9.5rem;
         padding-bottom: 0.5rem;
         margin-bottom: 1rem;
-
-        
+        width: 25rem;
+        height: 10rem;
 
         &:not(:last-child){
-            border-bottom: 1px solid #ccc;
+            margin-right: 2rem;
+            border-bottom:none;
         }
 
         &__title{

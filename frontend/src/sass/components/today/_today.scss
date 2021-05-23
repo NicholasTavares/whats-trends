@@ -1,24 +1,42 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container-relative{
+    position: relative;
     width: 100%;
     height: 100vh;
     background-color: #f7f7f7;
+    color: blueviolet;
 }
 
-.container-daily {
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     display: flex;
-    color: blueviolet;
+    justify-content: center;
+    align-items: center;
 
+    @include respond (tab-land){
+        flex-direction: column;
+    }
+
+    //LEFT
     &__trends{
         position: relative;
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         width: 42rem;
         margin-right: 2rem;
+
+        @include respond (tab-land) {
+            flex-direction: row;
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 2rem;
+            justify-content: space-between;
+            align-items: center;
+        }
 
         & > span{
             color: black;
@@ -28,13 +46,31 @@
         }
     }
 
+    //RIGHT
     &__news{
         display: flex;
-        width: 84rem;
-        height: 48rem;
+        flex-direction: column;
+    }
+
+    &__container-news{
+        display: flex;
         border-radius: 1rem;
         background-color: white;
         box-shadow: #ccc 0rem 0.3em 0.3rem 0;
+
+        @include respond (tab-port) {
+            flex-direction: column;
+        }
     }
+
+    &__container-entertainment{
+        margin-top: 2rem;
+        display: flex;
+        border-radius: 1rem;
+        background-color: white;
+        box-shadow: #ccc 0rem 0.3em 0.3rem 0;
+
+    }
+
 }
 

@@ -4,7 +4,7 @@ import Today from '../today/Today'
 const Trends = () => {
 
     return (
-        <div>
+        <div className='container-relative'>
             <Today />
         </div>
     )

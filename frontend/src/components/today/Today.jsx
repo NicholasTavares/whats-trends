@@ -10,22 +10,33 @@ import Region from '../region/Region'
 const Today = () => {
 
     return (
-        <div className="container">
-            <main className='container-daily'>
-                <div className='container-daily__trends'>
-                    <Carousel />
-                    <Region />
-                </div>
-                <div className='container-daily__news'>
+        <main className="container">
+            <div className='container__trends'>
+                <Carousel />
+                <Region />
+            </div>
+
+            <div className='container__news'>
+                <div className="container__container-news">
                     <Business />
                     <Sports />
                     <Entertainment />
                 </div>
-            </main>
-        </div>
+                <div className="container__container-entertainment">
+                    <Entertainment horizontal={true} />
+                </div>
+            </div>
+
+        </main>
 
     )
 }
+/* 
 
+<div className='container__trends'>
+                <Carousel />
+                <Region />
+            </div>
+*/
 
 export default Today

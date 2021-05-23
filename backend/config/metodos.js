@@ -37,7 +37,7 @@ exports.getRealTimeTrends = async (req, res, next) => {
     let promRes = await trendsRealTime;
     let RealTimeTrends = []
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
         if (JSON.parse(promRes).storySummaries.trendingStories[i]) {
             RealTimeTrends.push(JSON.parse(promRes).storySummaries.trendingStories[i])
         }
