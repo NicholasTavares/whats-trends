@@ -79,6 +79,10 @@
 
     &__container-data{
         display: flex;
+
+        @include respond (phone) {
+            flex-direction: column;
+        }
     }
 
     &__topics{
@@ -91,8 +95,25 @@
         height: 10rem;
 
         &:not(:last-child){
-            margin-right: 2rem;
+            margin-right: 3.5rem;
             border-bottom:none;
+        }
+
+        @include respond (tab-port) {
+            &:not(:last-child){
+                margin-right: 1rem;
+                border-bottom:none;
+            }
+            
+        }
+
+        @include respond (phone) {
+            &:not(:last-child){
+                margin-right: 0;
+                border-bottom:none;
+            }
+
+            width: 38rem;
         }
 
         &__title{

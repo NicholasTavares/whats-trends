@@ -10,8 +10,16 @@
     box-shadow: #ccc 0rem 0.3em 0.3rem 0;
 
     @include respond (tab-land) {
-        width: 40.5rem;
-        height: 24rem;
+        width: 42.5rem;
+        height: 22.5rem;
+    }
+
+    @include respond (tab-port) {
+        width: 39.5rem;
+    }
+
+    @include respond (phone) {
+        display: none;
     }
 
     &__search{
