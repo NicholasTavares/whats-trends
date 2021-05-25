@@ -87,7 +87,7 @@ body {
     flex-direction: column; }
     @media (max-width: 40em) {
       .container__news {
-        margin-bottom: 2rem; } }
+        margin-bottom: 4rem; } }
   .container__container-news {
     display: flex;
     border-radius: 1rem;
