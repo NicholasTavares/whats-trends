@@ -42,7 +42,6 @@ export function getRealTimeTrendsST(category) {
 }
 
 export function getInterestByRegion(geo, keyword, data) {
-    console.log('REGION: ', geo, keyword, data)
     const request = axios.get(`${BASE_URL}/interestbyregiontrends`, {
         params: {
             geo: geo,

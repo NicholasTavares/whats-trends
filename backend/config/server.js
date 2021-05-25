@@ -15,6 +15,6 @@ server.get('/api/dailytrends', getDailyTrends)
 server.get('/api/realtimetrends', getRealTimeTrends)
 server.get('/api/interestbyregiontrends', getInterestByRegion)
 
-server.listen(3002, console.log('SERVIDOR RODANDO'))
+server.listen(3002)
 
 module.exports = server
