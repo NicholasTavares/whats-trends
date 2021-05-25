@@ -30,7 +30,11 @@ html{
 body{
     font-family: 'Quicksand', sans-serif;
     box-sizing: border-box;
-    background-color: #f7f7f7;
+    
+    background-size: 300% 300%;
+    animation: gradient-color 10s cubic-bezier(0.86, 0, 0.07, 1) alternate infinite;
+    background-image: linear-gradient(to right bottom, blueviolet,#f7f7f7, #202f35, #E67E00, #DB1900 );
+
 
     @include respond (tab-port) {
         padding: 0;
