@@ -10,9 +10,8 @@ import promise from 'redux-promise'
 
 import reducers from './redux/generalReducers.js'
 
-const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 // estado único da aplicação
-const store = applyMiddleware(thunk, multi, promise)(createStore)(reducers, devTools)
+const store = applyMiddleware(thunk, multi, promise)(createStore)(reducers)
 
 ReactDOM.render(
   <Provider store={store}>
