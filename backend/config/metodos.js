@@ -87,4 +87,3 @@ exports.getInterestByRegion = async (req, res, next) => {
         return res.json(null)
     }
 }
-
