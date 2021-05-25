@@ -2,21 +2,30 @@
     margin: 1rem 0 1rem 0;
     padding: 0 2rem 0 2rem;
     color: black;
-    width: 33.33%;
+    min-width: 28rem;
 
     &__title-s{
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
         color: #F09100;
+        border-bottom: 2px solid #F09100;
     }
 
     &__title-b{
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+        color: black;
+        border-bottom: 2px solid black;
+    }
+
+    &__title-st{
         position: relative;
         display: flex;
         font-size: 1.8rem;
         font-weight: 600;
         margin-bottom: 1.5rem;
-        color: black;
+        color: #4384a7;
+        border-bottom: 2px solid #4384a7;
 
         &__arrow{
             position: relative;
@@ -31,7 +40,6 @@
         &__options{
             position: absolute;
             width: 11rem;
-            height: 5rem;
             background-color: white;
             border: 1px solid grey;
             box-shadow: #e6e6e6 0rem 0.2em 0.4rem 0;
@@ -44,7 +52,7 @@
                 justify-content: center;
                 align-items: center;
                 width: 100%;
-                height: 50%;
+                height: 2.5rem;
 
                 &:not(:last-child){
                     border-bottom: 1px solid grey;
@@ -67,10 +75,32 @@
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
         color: #C61142;
+        border-bottom: 2px solid #C61142;
     }
     
     &:not(:last-child){
         border-right: 1px solid black;
+    }
+
+    @include respond (tab-port) {
+        &:not(:last-child){
+            border-right: none;
+            margin-bottom: 0;
+        }
+        
+    }
+
+    &__container-data{
+        display: flex;
+        flex-direction: column;
+
+        @include respond (tab-port) {
+            flex-direction: row;
+        }
+
+        @include respond (phone) { // width < 600?
+            flex-direction: column;
+        }
     }
 
     &__topics{
@@ -79,12 +109,28 @@
         height: 9.5rem;
         padding-bottom: 0.5rem;
         margin-bottom: 1rem;
-
-        
+        width: 25rem;
+        height: 10rem;
 
         &:not(:last-child){
             border-bottom: 1px solid #ccc;
         }
+        
+        @include respond (tab-port) {
+            &:not(:last-child){
+                margin-right: 1rem;
+                border-bottom:none;
+            }
+        }
+
+        @include respond (phone) { // width < 600?
+            &:not(:last-child){
+                margin-right: 0rem;
+                border-bottom:none;
+            }
+            width: 38rem;
+        }
+        
 
         &__title{
             text-decoration: none;

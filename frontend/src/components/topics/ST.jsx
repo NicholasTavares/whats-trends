@@ -6,18 +6,51 @@ import { FiChevronDown } from 'react-icons/fi'
 
 
 // ACTIONS
-import { getRealTimeTrendsBusiness } from '../../redux/actions/trendsActions'
+import { getRealTimeTrendsST } from '../../redux/actions/trendsActions'
 
-const Business = ({ business, getRealTimeTrendsBusiness }) => {
+const ST = ({ st, getRealTimeTrendsST }) => {
 
-    useEffect(() => getRealTimeTrendsBusiness('b'), [])
+    useEffect(() => getRealTimeTrendsST('t'), [])
+
+    const [slide, setSlide] = useState(false)
+    const [option, setOptions] = useState(['Ciência e Tecnologia', 'Saúde'])
+
+    const changeOptions = (textOption) => {
+        option.filter((el, i) => {
+            if (el === textOption) {
+                option[i] = option[0]
+                option[0] = el
+                setOptions(option)
+            }
+        })
+        if (option[0] === 'Ciência e Tecnologia') {
+            getRealTimeTrendsST('t')
+        }
+        if (option[0] === 'Saúde') {
+            getRealTimeTrendsST('m')
+        }
+    }
 
     return (
 
         <section className='topic-container'>
-            <h1 className='topic-container__title-b'>Negócios</h1>
+            <div className='topic-container__title-st'>
+                <span>{option[0]}</span>
+                <div className='topic-container__title-st__arrow' onClick={() => setSlide(!slide)}>
+                    <FiChevronDown />
+
+                    {slide ?
+                        <div className='topic-container__title-st__options'>
+                            <div className="topic-container__title-st__options__option"
+                                onClick={(e) => changeOptions(e.target.innerText)}>
+                                <span>{option[1]}</span>
+                            </div>
+                        </div> :
+                        ''}
+                </div>
+            </div>
             <div className="topic-container__container-data">
-                {business ? business.map((topic, i) =>
+                {st ? st.map((topic, i) =>
                     <div className='topic-container__topics' key={i}>
                         <a className='topic-container__topics__title' target="_blank"
                             rel="noopener noreferrer" href={topic.articles[0].url}>
@@ -43,10 +76,10 @@ const Business = ({ business, getRealTimeTrendsBusiness }) => {
 
 
 const mapStatetoProps = state => ({
-    business: state.trend.business
+    st: state.trend.st
 
 })
 // vai disparar uma chamada para todos os reducers da aplicação se uma função for chamada
-const mapDispatchToProps = dispatch => bindActionCreators({ getRealTimeTrendsBusiness }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ getRealTimeTrendsST }, dispatch)
 // estou passando para as propriedades de Today
-export default connect(mapStatetoProps, mapDispatchToProps)(Business)
+export default connect(mapStatetoProps, mapDispatchToProps)(ST)
