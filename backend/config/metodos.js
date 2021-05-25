@@ -87,35 +87,3 @@ exports.getInterestByRegion = async (req, res, next) => {
         return res.json(null)
     }
 }
-
-exports.getGameTopic = async (req, res, next) => {
-
-    let trendsRealTime = await googleTrends.relatedTopics({
-        keyword: 'Games',
-        startTime: new Date('2020-01-01'),
-        endTime: new Date('2021-02-10'),
-        geo: 'BR',
-        hl: 'PT-BR',
-    })
-    let promRes = await trendsRealTime;
-    let trendsGames = []
-
-    JSON.parse(promRes).default.rankedList.forEach(t => {
-        // Loop through rankedKeyword
-        t.rankedKeyword.forEach(r => {
-            // Push objects
-            trendsGames.push({
-                keyword: keyword,
-                topic: r.topic.title,
-                type: r.topic.type,
-                value: r.value
-            })
-        });
-    });
-
-    if (trendsGames.length > 0) {
-        return res.json(trendsGames)
-    } else {
-        return res.json(null)
-    }
-}
