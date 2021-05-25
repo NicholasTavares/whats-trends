@@ -1,24 +1,39 @@
-.container{
+.container-relative{
+    width: 100%;
+    color: blueviolet;
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    background-color: #f7f7f7;
 }
 
-.container-daily {
+.container{
+    margin-top: 4rem;
     display: flex;
-    color: blueviolet;
 
-    &__side-trends-container{
-        position: relative;
+    @include respond (tab-land){
+        flex-direction: column;
+    }
+
+    //LEFT
+    &__trends{
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         width: 42rem;
         margin-right: 2rem;
+        
+
+        @include respond (tab-land) {
+            flex-direction: row;
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 2rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+        @include respond (phone) {
+            flex-direction: column;
+        }
 
         & > span{
             color: black;
@@ -28,20 +43,37 @@
         }
     }
 
-    &__side-trends{
+    //RIGHT
+    &__news{
         display: flex;
         flex-direction: column;
-        width: 100%;
-        height: 100%;
+
+        @include respond (phone) {
+            margin-bottom: 4rem;
+        }
     }
 
-    &__container-real-time{
+    &__container-news{
         display: flex;
-        width: 84rem;
-        height: 48rem;
         border-radius: 1rem;
         background-color: white;
         box-shadow: #ccc 0rem 0.3em 0.3rem 0;
+
+        @include respond (tab-port) {
+            flex-direction: column;
+        }
+        
     }
+
+    &__container-entertainment{
+        margin-top: 2rem;
+        display: flex;
+        border-radius: 1rem;
+        background-color: white;
+        box-shadow: #ccc 0rem 0.3em 0.3rem 0;
+        
+
+    }
+
 }
 

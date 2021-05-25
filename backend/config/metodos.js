@@ -72,6 +72,7 @@ exports.getInterestByRegion = async (req, res, next) => {
     let trendsRegion = []
 
     JSON.parse(promRes).default.geoMapData.forEach(r => {
+        console.log(r)
         trendsRegion.push({
             keyword: keyword,
             name: r.geoName,
